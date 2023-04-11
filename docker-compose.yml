@@ -9,7 +9,7 @@ services:
   swagger-ui:
     image: swaggerapi/swagger-ui
     ports:
-      - 80:8080
+      - 8080:8080
     volumes:
       - ./docs/schema.yml:/schema.yml
     environment:
