@@ -26,5 +26,6 @@ class Entity(models.Model):
     )
     properties = models.ManyToManyField(
         Property,
-        help_text='Properties of the entity'
+        help_text='Properties of the entity',
+        blank=True
     )
