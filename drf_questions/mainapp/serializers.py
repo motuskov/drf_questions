@@ -1,4 +1,8 @@
 from rest_framework import serializers
+from drf_spectacular.utils import (
+    extend_schema_serializer,
+    OpenApiExample,
+)
 
 from .models import (
     Entity,
@@ -26,6 +30,30 @@ class PropertySerializer(serializers.ModelSerializer):
         model = Property
         fields = ['key', 'value']
 
+@extend_schema_serializer(
+    examples=[
+        OpenApiExample(
+            'Example',
+            summary='Example',
+            description='Ordinal example',
+            value={
+                'value': 0
+            },
+            request_only=True,
+            response_only=False,
+        ),
+        OpenApiExample(
+            'Alias example',
+            summary='Example with alias',
+            description='Example of using alias',
+            value={
+                'data[value]': 0
+            },
+            request_only=True,
+            response_only=False,
+        ),
+    ]
+)
 class EntitySerializer(serializers.ModelSerializer):
     '''Entity class serializer
     '''

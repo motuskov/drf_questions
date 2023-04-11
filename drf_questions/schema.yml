@@ -33,6 +33,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Entity'
+            examples:
+              Example:
+                value:
+                  value: 0
+                summary: Example
+                description: Ordinal example
+              AliasExample:
+                value:
+                  data[value]: 0
+                summary: Example with alias
+                description: Example of using alias
           application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/Entity'
@@ -92,6 +103,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Entity'
+            examples:
+              Example:
+                value:
+                  value: 0
+                summary: Example
+                description: Ordinal example
+              AliasExample:
+                value:
+                  data[value]: 0
+                summary: Example with alias
+                description: Example of using alias
           application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/Entity'
@@ -127,6 +149,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PatchedEntity'
+            examples:
+              Example:
+                value:
+                  value: 0
+                summary: Example
+                description: Ordinal example
+              AliasExample:
+                value:
+                  data[value]: 0
+                summary: Example with alias
+                description: Example of using alias
           application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/PatchedEntity'
