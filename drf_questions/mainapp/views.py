@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from rest_framework import permissions
 
 from .models import (
     Entity,
@@ -14,6 +15,7 @@ class EntityViewSet(viewsets.ModelViewSet):
     '''
     queryset = Entity.objects.all()
     serializer_class = EntitySerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.validated_data['modified_by'] = self.request.user
@@ -28,3 +30,4 @@ class PropertyViewSet(viewsets.ModelViewSet):
     '''
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
