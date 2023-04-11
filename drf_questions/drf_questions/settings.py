@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'drf_spectacular',
     'mainapp',
 ]
 
@@ -123,3 +124,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# REST framework settings
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+# drf-spectacular settings
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'DRF questions API',
+    'DESCRIPTION': 'DRF questions project',
+    'VERSION': '0.1.a1',
+    'SERVE_INCLUDE_SCHEMA': False,
+}

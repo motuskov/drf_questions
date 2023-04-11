@@ -1,0 +1,386 @@
+openapi: 3.0.3
+info:
+  title: DRF questions API
+  version: 0.1.a1
+  description: DRF questions project
+paths:
+  /entities/:
+    get:
+      operationId: entities_list
+      description: View set of Entity class serializer
+      tags:
+      - entities
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Entity'
+          description: ''
+    post:
+      operationId: entities_create
+      description: View set of Entity class serializer
+      tags:
+      - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Entity'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Entity'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: ''
+  /entities/{id}/:
+    get:
+      operationId: entities_retrieve
+      description: View set of Entity class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this entity.
+        required: true
+      tags:
+      - entities
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: ''
+    put:
+      operationId: entities_update
+      description: View set of Entity class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this entity.
+        required: true
+      tags:
+      - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Entity'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Entity'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Entity'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: ''
+    patch:
+      operationId: entities_partial_update
+      description: View set of Entity class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this entity.
+        required: true
+      tags:
+      - entities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedEntity'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedEntity'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedEntity'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Entity'
+          description: ''
+    delete:
+      operationId: entities_destroy
+      description: View set of Entity class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this entity.
+        required: true
+      tags:
+      - entities
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /properties/:
+    get:
+      operationId: properties_list
+      description: View set of Property class serializer
+      tags:
+      - properties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Property'
+          description: ''
+    post:
+      operationId: properties_create
+      description: View set of Property class serializer
+      tags:
+      - properties
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Property'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Property'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Property'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+          description: ''
+  /properties/{id}/:
+    get:
+      operationId: properties_retrieve
+      description: View set of Property class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this property.
+        required: true
+      tags:
+      - properties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+          description: ''
+    put:
+      operationId: properties_update
+      description: View set of Property class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this property.
+        required: true
+      tags:
+      - properties
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Property'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Property'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Property'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+          description: ''
+    patch:
+      operationId: properties_partial_update
+      description: View set of Property class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this property.
+        required: true
+      tags:
+      - properties
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProperty'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProperty'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProperty'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+          description: ''
+    delete:
+      operationId: properties_destroy
+      description: View set of Property class serializer
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this property.
+        required: true
+      tags:
+      - properties
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Entity:
+      type: object
+      description: Entity class serializer
+      properties:
+        value:
+          type: integer
+        properties:
+          type: object
+          additionalProperties: {}
+          description: Returns entity's properties as a dictionary
+          readOnly: true
+      required:
+      - properties
+      - value
+    PatchedEntity:
+      type: object
+      description: Entity class serializer
+      properties:
+        value:
+          type: integer
+        properties:
+          type: object
+          additionalProperties: {}
+          description: Returns entity's properties as a dictionary
+          readOnly: true
+    PatchedProperty:
+      type: object
+      description: Property class serializer
+      properties:
+        key:
+          type: string
+          description: Key of the property
+          maxLength: 100
+        value:
+          type: string
+          description: Value of the property
+          maxLength: 100
+    Property:
+      type: object
+      description: Property class serializer
+      properties:
+        key:
+          type: string
+          description: Key of the property
+          maxLength: 100
+        value:
+          type: string
+          description: Value of the property
+          maxLength: 100
+      required:
+      - key
+      - value
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

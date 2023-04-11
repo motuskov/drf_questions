@@ -8,7 +8,7 @@ from .models import (
 class AliasIntegerField(serializers.IntegerField):
     '''Integer field with possibility of creating a field name alias 
     '''
-    def __init__(self, field_name_alias=None, **kwargs):
+    def __init__(self, field_name_alias: str=None, **kwargs):
         self.field_name_alias = field_name_alias
         super().__init__(**kwargs)
 
@@ -32,7 +32,7 @@ class EntitySerializer(serializers.ModelSerializer):
     value = AliasIntegerField(field_name_alias='data[value]')
     properties = serializers.SerializerMethodField(read_only=True)
 
-    def get_properties(self, obj):
+    def get_properties(self, obj: Entity) -> dict:
         '''Returns entity's properties as a dictionary
         '''
         properties = obj.properties.all()
